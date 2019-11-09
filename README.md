@@ -16,8 +16,19 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * 스프링 부트가 관리 해주지 않는 라이브러리는 버전을 명시 해주는것이 Best 
         * 의존성 변경
             * 스프링 부트가 관리 해주는 버전도 변경 할 수 있다.
-            
-        
+    * 자동 설정 이해
+        * @EnableAutoConfiguration (@SpringBootApplication 안에 숨어 있다.)
+        * 빈은 사실 두 단계로 나눠서 읽힘
+            * 1단계 : @ComponentScan
+            * 2단계 : @EnableAutoConfiguration
+        * @ComponentScan
+            * @Component
+            * @Configuration @Repository @Service @Controller @RestController
+        * EnableAutoConfiguration
+            * spring.factories
+                * org.springframwork.boot.autoconfigure.EnableAutoConfiguration
+            * @Configuration
+            * @ConditionalOnXxxYyyZzz
 
 * 스프링 부트 활용
 
