@@ -29,7 +29,7 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * org.springframwork.boot.autoconfigure.EnableAutoConfiguration
             * @Configuration
             * @ConditionalOnXxxYyyZzz
-    * 자동 설정 만들기
+    * 자동 설정 만들기 dongchul-spring-boot-starter 참고
         * Xxx-Spring-Boot-Autoconfigure 모듈: 자동 설정
         * Xxx-Spring-Boot-Starter 모듈: 필요한 의존성 정의
         * 구현 방법
@@ -39,6 +39,12 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             4. spring.factories 안에 자동 설정 파일 추가
                * org.springframework.boot.autoconfigure.EnableAutoConfiguration=class
             5. mvn install
+        * 덮어쓰기 방지하기
+            *  ConditionalOnMissingBean - 빈이 등록 되어 있지 않을때 빈 등록함.
+        * 빈 재정의 수고 덜기
+            * @ConfigurationProperties("holoman")
+            * @EnableConfigurationProperties(HolomanProperties)
+            * 프로퍼티 키 값 자동 완성
 
 의존성 추가
 

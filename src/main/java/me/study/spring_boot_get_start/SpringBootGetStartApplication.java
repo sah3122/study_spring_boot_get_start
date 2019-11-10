@@ -27,7 +27,8 @@ public class SpringBootGetStartApplication {
 
     /**
      * autoconfiguration 으로 등록된 bean 은 component scan으로 등록하는 bean을 덮어 쓴다.
-     *
+     * ConditionalOnMissingBean - 빈이 등록 되어 있지 않을때 빈 등록함.
+     * component scan -> autoConfiguration 순으로
      */
     @Bean
     public Holoman holoman() {
