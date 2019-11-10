@@ -29,6 +29,18 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * org.springframwork.boot.autoconfigure.EnableAutoConfiguration
             * @Configuration
             * @ConditionalOnXxxYyyZzz
+    * 자동 설정 만들기
+        * Xxx-Spring-Boot-Autoconfigure 모듈: 자동 설정
+        * Xxx-Spring-Boot-Starter 모듈: 필요한 의존성 정의
+        * 구현 방법
+            1. 의존성 추가 (new project 생성 - dongchul-spring-boot-starter)
+            2. @Configuration 파일 작성
+            3. src/main/resource/META-INF에 spring.factories 파일 만들기
+            4. spring.factories 안에 자동 설정 파일 추가
+               * org.springframework.boot.autoconfigure.EnableAutoConfiguration=class
+            5. mvn install
+
+의존성 추가
 
 * 스프링 부트 활용
 
