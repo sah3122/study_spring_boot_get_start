@@ -95,8 +95,29 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * org.springframework.boot.loader.jar.JarFile을 사용해서 내장 JAR 를 읽는다.
             * org.springframework.boot.loader.Launcher를 사용해서 실행한다.
 
-의존성 추가
-
 * 스프링 부트 활용
-
+    * 스프링 부트 활용 소개
+        * 스프링 부트 핵심 기능
+            * SpringApplication
+            * 외부 설정
+            * 프로파일
+            * 로깅
+            * 테스트
+            * Spring-Dev-Tools
+        * 각종 기술 연동
+            * 스프링 웹 MVC
+            * 스프링 데이터
+            * 스프링 시큐리티
+            * REST API 클라이언트
+            * 다루지 않은 내용들.
+    * SpringApplication
+        * 기본 로그 레벨 INFO
+            * 뒤에 로깅 수업때 자세히 살펴볼 예정
+        * FailureAnalyzer
+        * 배너
+            * banner.txt | gif | jpg
+            * classpath 또는 spring.banner.location
+            * ${spring-boot.version} 등의 변수를 사용할 수 있음.
+            * Banner 클래스 구현하고 SpringApplication.setBanner()로 설정 가능.
+        * SpringApplicationBuilder로 빑더 패턴 사용 가능.
 * 스프링 부트 운영

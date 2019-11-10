@@ -1,0 +1,3 @@
+=========================
+DongChul Spring Boot ${application.version}
+=========================

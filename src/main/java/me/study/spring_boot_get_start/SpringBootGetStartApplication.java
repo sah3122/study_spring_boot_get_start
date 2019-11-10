@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +34,10 @@ import java.io.PrintWriter;
 public class SpringBootGetStartApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootGetStartApplication.class, args);
+        //SpringApplication.run(SpringBootGetStartApplication.class, args);
+        new SpringApplicationBuilder()
+                .sources(SpringBootGetStartApplication.class)
+                .run(args);
     }
 
     /**
