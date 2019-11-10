@@ -2,13 +2,17 @@ package me.study.spring_boot_get_start;
 
 import me.dongchul.Holoman;
 import org.apache.catalina.Context;
+import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,27 +33,7 @@ import java.io.PrintWriter;
 public class SpringBootGetStartApplication {
 
     public static void main(String[] args) {
-        //SpringApplication.run(SpringBootGetStartApplication.class, args);
-        SpringApplication application = new SpringApplication(SpringBootGetStartApplication.class);
-        application.run(args);
-
-        Tomcat tomcat = new Tomcat();
-        tomcat.setPort(8080);
-
-        Context context = tomcat.addContext("/", "/");
-
-        HttpServlet httpServlet = new HttpServlet() {
-            @Override
-            protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-                PrintWriter writer = resp.getWriter();
-                writer.println("");
-            }
-        };
-
-        String servletName = "helloServlet";
-        tomcat.addServlet("/", servletName, httpServlet);
-        context.addServletMappingDecoded("/hello", servletName);
-
+        SpringApplication.run(SpringBootGetStartApplication.class, args);
     }
 
     /**
@@ -64,5 +48,23 @@ public class SpringBootGetStartApplication {
         holoman.setHowLong(60);
         return holoman;
     }
+
+    /**
+     * https와 http를 사용하기 위해 connector 등록.
+     *
+     */
+    @Bean
+    public ServletWebServerFactory serverFactory() {
+        TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+        tomcat.addAdditionalTomcatConnectors(createStandardConnector());
+        return tomcat;
+    }
+
+    private Connector createStandardConnector() {
+        Connector connector = new Connector("org.apache/.coyote.http11.Http11NioProtocol");
+        connector.setPort(8080);
+        return createStandardConnector();
+    }
+
 
 }

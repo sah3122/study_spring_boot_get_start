@@ -65,6 +65,18 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
         * 웹 서버 사용하지 않기
             * properties에 application-type 추가
         * 포트
+    * 내장 웹 서버 응용 2부 : https 와 http2
+        * HTTPS 설정하기
+            * 키스토어 만들기
+                * https://gist.github.com/keesun/f93f0b83d7232137283450e08a53c4fd
+            * HTTP 는 사용하지 못함 ?
+                * 기본적으로 http 커넥터는 1개라서 https를 설정하게 되면 http를 사용 못함.
+                * connector를 따로 등록 해줘야 한다.
+        * HTTP2
+            * SSL 은 기본적으로 적용이 되어 있어야 한다.
+            * undertow는 별다른 설정 없이 properties로 설정 가능
+            * tomcat 은 8.5 버전 이하에선 설정할 것들이 많아 권장 하지 않음
+            * tomcat 9.0 & java 9 이상부터 사용 권장. 
 
 의존성 추가
 
