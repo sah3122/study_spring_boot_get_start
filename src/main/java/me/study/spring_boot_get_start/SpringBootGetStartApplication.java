@@ -1,12 +1,21 @@
 package me.study.spring_boot_get_start;
 
 import me.dongchul.Holoman;
+import org.apache.catalina.Context;
+import org.apache.catalina.startup.Tomcat;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @SpringBootApplication
 
@@ -23,6 +32,24 @@ public class SpringBootGetStartApplication {
         //SpringApplication.run(SpringBootGetStartApplication.class, args);
         SpringApplication application = new SpringApplication(SpringBootGetStartApplication.class);
         application.run(args);
+
+        Tomcat tomcat = new Tomcat();
+        tomcat.setPort(8080);
+
+        Context context = tomcat.addContext("/", "/");
+
+        HttpServlet httpServlet = new HttpServlet() {
+            @Override
+            protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                PrintWriter writer = resp.getWriter();
+                writer.println("");
+            }
+        };
+
+        String servletName = "helloServlet";
+        tomcat.addServlet("/", servletName, httpServlet);
+        context.addServletMappingDecoded("/hello", servletName);
+
     }
 
     /**
