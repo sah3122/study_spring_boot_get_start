@@ -53,11 +53,18 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
         * 톰캣에 서블릿 추가
         * 컨텍스트에 서블릿 매핑
         * 톰캣 실행 및 대기
-    * 이 모든 과정을 보다 상세히 또 유연하고 설정하고 실행해주는게 바로 스프링 부트의 자동 설정.
-        * Step 1 : ServletWebServerFactoryAutoConfiguration (서블릿 웹 서버 생성)
-            * TomcatServletWebServerFactoryCustomizer (서버 커스터마이징)
-        * Step 2 : DispatcherServletAutoConfiguration
-            * 서블릿 만들고 등록.
+        * 이 모든 과정을 보다 상세히 또 유연하고 설정하고 실행해주는게 바로 스프링 부트의 자동 설정.
+            * Step 1 : ServletWebServerFactoryAutoConfiguration (서블릿 웹 서버 생성)
+                * TomcatServletWebServerFactoryCustomizer (서버 커스터마이징)
+            * Step 2 : DispatcherServletAutoConfiguration
+                * 서블릿 만들고 등록.
+    * 내장 웹 서버 응용 1부 : 컨테이너와 서버 포트
+        * 다른 서블릿 컨테이너로 변경
+            * boot-stater에 포함된 tomcat 의존성 제외
+            * undertow, jetty ... 의존성 추가
+        * 웹 서버 사용하지 않기
+            * properties에 application-type 추가
+        * 포트
 
 의존성 추가
 
