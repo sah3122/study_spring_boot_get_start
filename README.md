@@ -77,6 +77,10 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * undertow는 별다른 설정 없이 properties로 설정 가능
             * tomcat 은 8.5 버전 이하에선 설정할 것들이 많아 권장 하지 않음
             * tomcat 9.0 & java 9 이상부터 사용 권장. 
+    * 톰캣 HTTP2
+        * JDK9와 Tomcat 9+ 추천
+        * 링크 참조
+            * https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-embedded-web-servers
 
 의존성 추가
 
