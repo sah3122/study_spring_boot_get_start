@@ -1,11 +1,13 @@
 package me.study.spring_boot_get_start;
 
+import javassist.tools.rmi.Sample;
 import me.dongchul.Holoman;
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -33,11 +35,23 @@ import java.io.PrintWriter;
  */
 public class SpringBootGetStartApplication {
 
+    /**
+     * WebApplicationType
+     * NONE 서블릿과 Webflux가 없을때
+     * SERVLET : Servlet
+     * REACTIVE : WebFlux
+     */
     public static void main(String[] args) {
-        //SpringApplication.run(SpringBootGetStartApplication.class, args);
-        new SpringApplicationBuilder()
-                .sources(SpringBootGetStartApplication.class)
-                .run(args);
+        SpringApplication app = new SpringApplication(SpringBootGetStartApplication.class);
+        app.setWebApplicationType(WebApplicationType.NONE);
+        app.run(args);
+//        new SpringApplicationBuilder()
+//                .sources(SpringBootGetStartApplication.class)
+//                .run(args);
+        // applicationStartingEvent 는 application context 생성 전에 발생하기 때문에 이렇게 등록 해줘야 한다,
+//        SpringApplication app = new SpringApplication(SpringBootGetStartApplication.class);
+//        app.addListeners(new SampleListener());
+//        app.run(args);
     }
 
     /**

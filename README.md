@@ -120,4 +120,15 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * ${spring-boot.version} 등의 변수를 사용할 수 있음.
             * Banner 클래스 구현하고 SpringApplication.setBanner()로 설정 가능.
         * SpringApplicationBuilder로 빑더 패턴 사용 가능.
+    * ApplicationEvent 등록
+        * ApplicationContext를 만들기 전에 사용하는 리스너는 Bean등록 할 수 없다.
+            * SpringApplication.addListeners()
+    * WebApplication Type 설정
+    * 애플리케이션 아규먼트 사용하기
+        * -D 는 JVM 옵션
+        * -- Application Arguements
+        * ApplicationArguments를 빈으로 등록해주니깐 가져다 쓰면 된다.
+    * 애플리케이션 실행한 뒤 뭔가 실행 하고 싶을때
+        * ApplicationRunner(추천) 또는 CommandLineRunner
+        * 순서 지정 기능 @Order 
 * 스프링 부트 운영
