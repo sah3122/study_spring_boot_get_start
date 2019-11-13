@@ -11,6 +11,7 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +26,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @SpringBootApplication
-
 /**
  * @SpringBootApplication 은 아래 3가지 애노테이션을 포함 하고 있다.
  *

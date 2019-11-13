@@ -165,4 +165,24 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
         * 플레이스 홀더
             * name = dongchul
             * fullName = ${name} lee
+        * 타입-세이프 프로퍼티 @ConfigurationProperties
+            * 여러 프로퍼티를 묶어서 읽어올 수 있음.
+            * 빈으로 등록해서 다른 빈에 주입 할 수 있음
+                * @EnableConfigurationProperties
+                * @Component
+                * @Bean
+            * 융통성있는 바인딩
+                * context-path (kebab)
+                * context)path (under score)
+                * contextPath (camel)
+                * CONTEXTPATH
+            * 프로퍼티 타입 컨버전
+                * @DurationUnit
+            * 프로퍼티 값 검증
+                * @Validated
+                * JSR-303(@NotNull, ...)
+            * 메타 정보 생성
+            * @Value
+                * SpEL 을 사용할 수 있지만
+                * 위에 있는 기능들을 전부 사용 못함.
 * 스프링 부트 운영
