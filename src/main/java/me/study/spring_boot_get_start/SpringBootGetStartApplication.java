@@ -1,6 +1,5 @@
 package me.study.spring_boot_get_start;
 
-import javassist.tools.rmi.Sample;
 import me.dongchul.Holoman;
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
@@ -71,7 +70,7 @@ public class SpringBootGetStartApplication {
      * https와 http를 사용하기 위해 connector 등록.
      *
      */
-    @Bean
+    //@Bean
     public ServletWebServerFactory serverFactory() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
         tomcat.addAdditionalTomcatConnectors(createStandardConnector());

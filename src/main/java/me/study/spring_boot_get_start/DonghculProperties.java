@@ -18,7 +18,6 @@ public class DonghculProperties {
     @NotEmpty
     private String name;
 
-    @Size(min = 0,max = 100)
     private int age;
 
     private String fullName;

@@ -20,6 +20,9 @@ public class SampleRunner implements ApplicationRunner {
     @Autowired
     DonghculProperties donghculProperties;
 
+    @Autowired
+    public String hello;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println(donghculProperties.getName());

@@ -185,4 +185,14 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * @Value
                 * SpEL 을 사용할 수 있지만
                 * 위에 있는 기능들을 전부 사용 못함.
+    * 프로파일
+        * @Profile 애노테이션은 어디에서 사용하는가 ?
+            * @Configuration
+            * @Component
+        * 어떤 프로파일을 활성화 할 것인가 ?
+            * spring.profiles.active
+        * 어떤 프로파일을 추가 할 것인가 ?
+            * spring.profiles.include
+        * 프로파일용 프로퍼티
+            * application-{profile}.properties
 * 스프링 부트 운영
