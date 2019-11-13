@@ -120,15 +120,49 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * ${spring-boot.version} 등의 변수를 사용할 수 있음.
             * Banner 클래스 구현하고 SpringApplication.setBanner()로 설정 가능.
         * SpringApplicationBuilder로 빑더 패턴 사용 가능.
-    * ApplicationEvent 등록
-        * ApplicationContext를 만들기 전에 사용하는 리스너는 Bean등록 할 수 없다.
-            * SpringApplication.addListeners()
-    * WebApplication Type 설정
-    * 애플리케이션 아규먼트 사용하기
-        * -D 는 JVM 옵션
-        * -- Application Arguements
-        * ApplicationArguments를 빈으로 등록해주니깐 가져다 쓰면 된다.
-    * 애플리케이션 실행한 뒤 뭔가 실행 하고 싶을때
-        * ApplicationRunner(추천) 또는 CommandLineRunner
-        * 순서 지정 기능 @Order 
+        * ApplicationEvent 등록
+            * ApplicationContext를 만들기 전에 사용하는 리스너는 Bean등록 할 수 없다.
+                * SpringApplication.addListeners()
+        * WebApplication Type 설정
+        * 애플리케이션 아규먼트 사용하기
+            * -D 는 JVM 옵션
+            * -- Application Arguements
+            * ApplicationArguments를 빈으로 등록해주니깐 가져다 쓰면 된다.
+        * 애플리케이션 실행한 뒤 뭔가 실행 하고 싶을때
+            * ApplicationRunner(추천) 또는 CommandLineRunner
+            * 순서 지정 기능 @Order 
+    * 외부 설정
+        * properties 
+        * yaml
+        * 환경 변수
+        * 커맨드 라인 아규먼트
+        
+        * 프로퍼티 우선순위
+            1. 유저 홈 디렉토리에 있는 spring-boot-dev-tools.properties
+            2. 테스트에 있는 @TestPropertySource
+            3. @SpringBootTest 애노테이션의 properties 애트리뷰트
+            4. 커맨드 라인 아규먼트
+            5. SPRING_APPLICATION_JSON (환경 변수 또는 시스템 프로티) 에 들어있는 프로퍼티
+            6. ServletConfig 파라미터
+            7. ServletContext 파라미터
+            8. java:comp/env JNDI 애트리뷰트
+            9. System.getProperties() 자바 시스템 프로퍼티
+            10. OS 환경 변수
+            11. RandomValuePropertySource
+            12. JAR 밖에 있는 특정 프로파일용 application properties
+            13. JAR 안에 있는 특정 프로파일용 application properties
+            14. JAR 밖에 있는 application properties
+            15. JAR 안에 있는 application properties
+            16. @PropertySource
+            17. 기본 프로퍼티 (SpringApplication.setDefaultProperties)
+        * application.properties 우선순위
+            1. file:./config/
+            2. file:./
+            3. classpath:/config/
+            4. classpath:/ 
+        * 랜덤 값 설정하기
+            * ${random.*}    
+        * 플레이스 홀더
+            * name = dongchul
+            * fullName = ${name} lee
 * 스프링 부트 운영
