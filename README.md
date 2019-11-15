@@ -195,4 +195,20 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * spring.profiles.include
         * 프로파일용 프로퍼티
             * application-{profile}.properties
+    * 로깅
+        * 로깅 퍼사드 vs 로거
+            * Commons Logging, SLF4j
+            * JUL, Log4J2, LogBack
+        * 스프링 5에 로거 관련 변경 사항
+            * https://docs.spring.io/spring/docs/5.0.0.RC3/spring-framework-reference/overview.html#overview-logging
+            * Spring-JCL
+                * Commons Logging -> SLF4j or Log4j2
+                * pom.xml에 exclusion 안해도 됨 
+        * 스프링 부트 로깅
+            * 기본 포맷
+            * --debug (일부 핵심 라이브러리만 디버깅 모드로)
+            * --trace (전부 다 디버깅 모드로)
+            * 컬러 출력 : spring.output.n\ansi.enabled
+            * 파일 출력 : logging.file 또는 logging.path
+            * 로그 레벨 조정 : logging.level.패키지 = 로그레벨            
 * 스프링 부트 운영
