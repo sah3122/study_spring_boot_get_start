@@ -219,5 +219,26 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * 프로파일 <springProfile name="프로파일">
                 * Environment 프로퍼티 <springProperty>
         * 로거를 Log4j2로 변경하기
-            * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html#howto-configure-log4j-for-logging          
+            * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html#howto-configure-log4j-for-logging
+    * 테스트
+        * 시작은 spring-boot-starter-test를 추가하는것 부터
+            * test scope로 추가
+        * @SpringBootTest
+            * @RunWith(SpringRunner.class)랑 같이 써야함
+            * 빈 설정 파일은 설정을 안해주나 ? 알아서 찾는다. (@SpringBootApplication)
+            * WebEnvironment
+                * MOCK : mock servlet environment : 내장 톰캣 구동 안함.
+                * RANDOM_PORT, DEFINED_PORT : 내장 톰캣 사용 함
+                * NONE : 서블릿 환경 제공 안함
+            * @MockBean
+                * ApplicaionContext에 들어있는 빈을 Mock으로 만든 객체로 교체 함 
+                * 모든 @Test 마다 자동으로 리셋
+            * 슬라이스 테스트
+                * 레이어 별로 잘라서 테스트하고 싶을떄
+                * @JsonTest
+                * @WebMvcTest
+                * @WebFluxTest
+                * @DataJpaTest
+                * ...
+                          
 * 스프링 부트 운영

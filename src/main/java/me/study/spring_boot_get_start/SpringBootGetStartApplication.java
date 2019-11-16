@@ -1,6 +1,5 @@
 package me.study.spring_boot_get_start;
 
-import me.dongchul.Holoman;
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
@@ -58,13 +57,13 @@ public class SpringBootGetStartApplication {
      * ConditionalOnMissingBean - 빈이 등록 되어 있지 않을때 빈 등록함.
      * component scan -> autoConfiguration 순으로
      */
-    @Bean
-    public Holoman holoman() {
-        Holoman holoman = new Holoman();
-        holoman.setName("dongchul");
-        holoman.setHowLong(60);
-        return holoman;
-    }
+//    @Bean
+//    public Holoman holoman() {
+//        Holoman holoman = new Holoman();
+//        holoman.setName("dongchul");
+//        holoman.setHowLong(60);
+//        return holoman;
+//    }
 
     /**
      * https와 http를 사용하기 위해 connector 등록.
