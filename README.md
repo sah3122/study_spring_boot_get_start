@@ -240,5 +240,10 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * @WebFluxTest
                 * @DataJpaTest
                 * ...
+            * 테스트 유틸
+                * OutputCapture (log 및 stdout 관련 테스트)
+                * TestPropertyValues
+                * TestRestTemplate
+                * ConfigFileApplicationContextInitailizer
                           
 * 스프링 부트 운영
