@@ -284,5 +284,8 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * spring.mvc.static-locations: 리소스 찾을 위치 변경 가능
             * Last-Modified 헤더를 보고 304 응답을 보냄
             * ResourceHttpRequestHandler가 처리
-                * WebMvcConfigurer의 addResourceHandlers로 커스터 마이징 가능 
+                * WebMvcConfigurer의 addResourceHandlers로 커스터 마이징 가능
+        * 웹 JAR 맵핑 "/webjars/*"
+            * 버전 생략 하고 사용하려면
+                * webjars-locator-core 의존성 추가 
 * 스프링 부트 운영
