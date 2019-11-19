@@ -267,4 +267,10 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * @Configuration + WebMvcConfigurer
         * 스프링 MVC 재정의
             * @Configuration + @EnableWebMvc
+        * HttpMessageConverters
+            * HTTP 요청 본문을 객체로 변경하거나, 객체를 HTTP 응답 본문으로 변경 할 때 사용 <br>
+            {“username”:”keesun”, “password”:”123”} <-> User
+            * 스프링 부트
+                * 뷰 리졸버 설정 제공
+                * HttpMessageConvertersAutoConfiguration
 * 스프링 부트 운영
