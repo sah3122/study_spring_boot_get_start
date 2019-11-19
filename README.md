@@ -288,4 +288,13 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
         * 웹 JAR 맵핑 "/webjars/*"
             * 버전 생략 하고 사용하려면
                 * webjars-locator-core 의존성 추가 
+        * 웰컴 페이지
+            * index.html 찾아 보고 있으면 제공.
+            * index.템플릿 찾아보고 있으면 제공.
+            * 둘다 없으면 에러 페이지 노출
+        * 파비콘
+            * favicon.ico 파일을 static 폴더 하위에 저장.
+            * 파비콘 만들기 https://favicon.io/
+            * 파비콘이 안 바뀔 때 ?
+                * 파비콘 요청 -> 브라우저 껏다 켜기
 * 스프링 부트 운영
