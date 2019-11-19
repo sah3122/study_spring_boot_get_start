@@ -273,4 +273,16 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * 스프링 부트
                 * 뷰 리졸버 설정 제공
                 * HttpMessageConvertersAutoConfiguration
+        * 정적 리소스 매핑 "/**"
+            * 기본 리소스 위치
+                * classpath:/static
+                * classpath:/pubilc
+                * classpath:/resources/
+                * classpath:/META-INF/resources
+                * 예) "/hello.html" => static/hello.html
+                * spring.mvc.static-path-pattern: 매핑 설정 변경 가능
+                * spring.mvc.static-locations: 리소스 찾을 위치 변경 가능
+            * Last-Modified 헤더를 보고 304 응답을 보냄
+            * ResourceHttpRequestHandler가 처리
+                * WebMvcConfigurer의 addResourceHandlers로 커스터 마이징 가능 
 * 스프링 부트 운영
