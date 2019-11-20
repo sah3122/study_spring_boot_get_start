@@ -317,6 +317,25 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * http://htmlunit.sourceforge.net/gettingStarted.html
             * 의존성 추가
             * @Autowired WebClient
-                
+        * ExceptionHandler
+            * 스프링 @MVC 예외 처리 방법
+                * @ControllerAdvice
+                * @ExceptionHanlder
+            * 스프링 부트가 제공하는 기본 예외 처리기
+                * BaseErrorController
+                    * HTML 과 JSON 응답 지원
+                * 커스터마이징 방법
+                    * ErrorController 구현
+            * 스프링 부트가 제공하는 기본 예외 처리기
+                * BasicErrorController
+                    * HTML 과 JSON 응답 지원
+                * 커스터마이징 방법
+                    * ErrorController 구현
+            * 커스텀 에러 페이지
+                * 상태 코드 값에 따라 에러 페이지 보여주기
+                * src/main/resources/static/error/
+                * 404.html
+                * 5xx.html
+                * ErrorViewResolver 구현
          
 * 스프링 부트 운영
