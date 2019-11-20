@@ -1,5 +1,10 @@
 package me.study.spring_boot_get_start.user;
 
+import com.gargoylesoftware.htmlunit.Page;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.Html;
+import com.gargoylesoftware.htmlunit.html.HtmlHeading1;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -21,6 +27,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)
 public class UserControllerTest {
+
+    @Autowired
+    WebClient webClient;
 
     @Autowired
     MockMvc mockMvc;
@@ -43,6 +52,11 @@ public class UserControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.username", is(equalTo("dongchul"))))
                 .andExpect(jsonPath("$.password", is(equalTo("123"))));
+
+        HtmlPage page = webClient.getPage("/hello");
+        HtmlHeading1 h1 = page.getFirstByXPath("//h1");
+        assertThat(h1.getTextContent()).isEqualToIgnoringCase("dongchul");
+
     }
 
 }
