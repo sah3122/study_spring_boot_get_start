@@ -366,6 +366,23 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * https://docs.spring.io/spring/docs/5.0.7.RELEASE/spring-framework-reference/web.html#mvc-cors
                 * @Controller나 @RequestMapping에 추가 하거나
                 * WebMvcConfigurer 사용해서 글로벌 설정
+    * 스프링 데이터
+        * 인메모리 데이터베이스
+            * 지원하는 인-메모리 데이터베이스
+                * H2 (추천, 콘솔때문에)
+                * HSQL
+                * Derby
+            * Spring-JDBC가 클래스패스에 있으면 자동 설정이 필요한 빈을 설정 해준다.
+                * DataSource
+                * JdbcTemplate
+            * 인-메모리 데이터베이스 기본 연결 정보 확인 하는 방법
+                * URL : "testdb"
+                * username : "sa"
+                * password : ""
+            * H2 콘솔 사용하는 방법
+                * spring-boot-devtools를 추가 하거나
+                * spring.h2.console.enabled=true 추가
+                * /h2-console로 접속 (path변경 가능)
                     
          
 * 스프링 부트 운영
