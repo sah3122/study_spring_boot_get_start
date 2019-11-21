@@ -354,5 +354,18 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * Jackson2ObjectMapperBuilder
             * LinkDiscovers 제공
                 * 클라이언트 쪽에서 링크 정보를 Rel 이름으로 찾을 때 사용할 수 있는 XPath 확장 클래스
+        * CORS
+            * SOP와 CORS
+                * Single-Origin Policy
+                * Cross-Origin Resource Sharing
+                * Origin ?
+                    * URI 스키마 (http, https)
+                    * hostname (localhost...)
+                    * 포트 (8080, 18080)
+            * 스프링 MVC @CrossOrigin
+                * https://docs.spring.io/spring/docs/5.0.7.RELEASE/spring-framework-reference/web.html#mvc-cors
+                * @Controller나 @RequestMapping에 추가 하거나
+                * WebMvcConfigurer 사용해서 글로벌 설정
+                    
          
 * 스프링 부트 운영
