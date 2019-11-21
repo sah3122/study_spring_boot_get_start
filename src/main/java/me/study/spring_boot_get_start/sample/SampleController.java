@@ -3,12 +3,15 @@ package me.study.spring_boot_get_start.sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.Link;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.hateoas.RepresentationModel;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
 public class SampleController {
@@ -19,13 +22,16 @@ public class SampleController {
     private SampleService sampleService;
 
     @GetMapping("/hello")
-    public String hello() {
-        logger.info("hello");
-        System.out.println("hello");
-        return "hello " + sampleService.getName();
+    public Hello hello() {
+        Hello hello = new Hello();
+        hello.setName("dongchul");
+        hello.setPrefix("Hey, ");
+
+        hello.add(linkTo(SampleController.class).withSelfRel());
+        return hello;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/exception")
     public String exception() {
         throw new SampleException();
     }
