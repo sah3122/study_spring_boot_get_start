@@ -422,5 +422,16 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * 스프링 데이터 리파지토리 테스트 만들기
                 * H2 DB를 테스트 의존성에 추가하기
                 * @DataJpaTest (슬라이스 테스트) 작성      
-                    * 테스트를 실행할 때는 Inmemory DB를 사용하는것을 추천.   
+                    * 테스트를 실행할 때는 Inmemory DB를 사용하는것을 추천.  
+        * JPA를 사용한 데이터베이스 초기화
+            * spring.jpa.hibernate.dll.auto 
+                * create
+                * create-drop
+                * update
+                * validate
+            * spring.jpa.generate-dll=true로 설정 해줘야 한다.
+        * SQL 스크립트를 사용한 데이터베이스 초기화
+            * schema.sql 또는 schema-${platform}.sql
+            * data.sql 또는 data-${platform}.sql
+            * ${platform} 값은 spring.datasource.platform으로 설정 가능. 
 * 스프링 부트 운영
