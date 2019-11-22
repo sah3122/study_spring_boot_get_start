@@ -434,4 +434,19 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * schema.sql 또는 schema-${platform}.sql
             * data.sql 또는 data-${platform}.sql
             * ${platform} 값은 spring.datasource.platform으로 설정 가능. 
+        * 데이터베이스 마이그레이션 툴
+            * Flyway 와 Liquibase가 대표적, Flyway 사용
+            * https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup
+            * 의존성 추가
+                * org.flywaydb:flyway-core
+            * 마이그레이션 디렉토리
+                * /resource/db/migration 또는 db/migration/{vendor}
+                * spring.flyway.location으로 변경 가능
+            * 마이그레이션 파일 이름
+                * 한번 적용이 된 파일은 절대 수정하면 안되고 새로운 파일을 만들어서 버전을 올려야 한다.
+                * V숫자__이름.sql
+                * V는 꼭 대문자
+                * 숫자는 순차적으로 (타임스템프 권장)
+                * 숫자와 이름 사이에 언더바 두개
+                * 이름은 가능한 서술적으로
 * 스프링 부트 운영
