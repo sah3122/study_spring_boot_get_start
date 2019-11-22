@@ -383,6 +383,28 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * spring-boot-devtools를 추가 하거나
                 * spring.h2.console.enabled=true 추가
                 * /h2-console로 접속 (path변경 가능)
+        * MySQL
+            * 지원하는 DBCP
+                1. HikariCP (기본)
+                    * https://github.com/brettwooldridge/HikariCP#frequently-used
+                2. Tomcat CP
+                3. Commonc DBCP2
+            * DBCP 설정
+                * spring.datasource.hikari.*
+                * spring.datasource.tomcat.*
+                * spring.datasource.dbcp2.*
+            * MySQL 라이센스 (GPL) 주의
+                * MySQL 대신 MariaDB 사용 검토
+                * 소스 코드 공개 의무 여부 확인
+            * MySQL 접속시 에러
+                * MySQL 5.* 최신 버전 사용할 때 문제
+                    * Sat Jul 21 11:17:59 PDT 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+                * 해결
+                    * jdbc:mysql:/localhost:3306/springboot?useSSL=false
+                * MySQL 8.* 최신 버전 사용할 때 문제
+                    * com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Public Key Retrieval is not allowed
+                * 해결
+                    * jdbc:mysql:/localhost:3306/springboot?useSSL=false&allowPublicKeyRetrieval=true
                     
          
 * 스프링 부트 운영
