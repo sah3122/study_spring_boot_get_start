@@ -405,6 +405,8 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                     * com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Public Key Retrieval is not allowed
                 * 해결
                     * jdbc:mysql:/localhost:3306/springboot?useSSL=false&allowPublicKeyRetrieval=true
-                    
+        * PostgreSQL
+            * Mysql 과는 달리 라이센스 문제가 없다. 가장 추천하는 DB
+             
          
 * 스프링 부트 운영
