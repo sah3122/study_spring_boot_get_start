@@ -1,8 +1,12 @@
 package me.study.spring_boot_get_start;
 
+import me.study.spring_boot_get_start.account.MongoAccount;
+import me.study.spring_boot_get_start.account.MongoAccountRepository;
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.WebApplicationType;
@@ -14,6 +18,7 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.ServletException;
@@ -32,6 +37,12 @@ import java.io.PrintWriter;
  * @ComponentScan
  */
 public class SpringBootGetStartApplication {
+
+    @Autowired
+    MongoTemplate mongoTemplate;
+
+    @Autowired
+    MongoAccountRepository mongoAccountRepository;
 
     /**
      * WebApplicationType
@@ -80,6 +91,18 @@ public class SpringBootGetStartApplication {
         Connector connector = new Connector("org.apache/.coyote.http11.Http11NioProtocol");
         connector.setPort(8080);
         return createStandardConnector();
+    }
+
+    @Bean
+    public ApplicationRunner applicationRunner() {
+        return args -> {
+            MongoAccount mongoAccount = new MongoAccount();
+            mongoAccount.setEmail("Email");
+            mongoAccount.setUsername("dongchul");
+
+            //mongoTemplate.insert(mongoAccount);
+            mongoAccountRepository.insert(mongoAccount);
+        };
     }
 
 

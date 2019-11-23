@@ -465,4 +465,11 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * hget {key} {column}
             * 커스터마이징
                 * spring.redis.*
+        * MongoDB
+            * 스프링 데이터 몽고 DB
+                * Mongotemplate
+                * MongoRepository
+                * 내장형 MongoDB (테스트용)
+                    * de.flapdoodle.embed:de.flapdoodle.embed.mongo
+                * @DataMongoTest
 * 스프링 부트 운영
