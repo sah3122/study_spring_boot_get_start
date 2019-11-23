@@ -472,4 +472,10 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * 내장형 MongoDB (테스트용)
                     * de.flapdoodle.embed:de.flapdoodle.embed.mongo
                 * @DataMongoTest
+        * Neo4J
+            * Neo4j는 노드간의 연관 관계를 영속화 하는데 유리한 그래프 데이터베이스
+            * 스프링 데이터 Neo4J
+                * Neo4jTemplate (Deprecated)
+                * SessionFactory
+                * Neo4jRepository
 * 스프링 부트 운영
