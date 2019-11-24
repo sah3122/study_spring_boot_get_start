@@ -497,4 +497,10 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * 인증 관련 각종 이벤트 발생
                 * DefaultAuthenticationEventPublisher 빈 등록
                 * 다양한 인증 에러 핸들러 등록 가능
+        * UserDetailsService 구현
+            * https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#jc-authentication-userdetailsservice
+            * UserDetails 를 구현한 기본 구현체(User)를 Spring Security에서 제공해준다.
+        * PasswordEncoder 설정 및 사용
+            * https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#core-services-password-encoding
+            * 
 * 스프링 부트 운영
