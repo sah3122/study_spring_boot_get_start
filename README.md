@@ -478,4 +478,23 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * Neo4jTemplate (Deprecated)
                 * SessionFactory
                 * Neo4jRepository
+    * 스프링 시큐리티
+        * 웹 시큐리티
+        * 메소드 시큐리티
+        * 다양한 인증 방법 지원
+            * LDAP, 폼 인증, Basic 인증, OAuth, ...
+        * 스프링 부트 시큐리티 자동 설정
+            * SecurityAutoConfiguration 
+            * UserDetailServiceAutoConfiguration
+            * spring-boot-starter-secutiry
+                * 스프링 시큐리티 5.* 의존성 추가
+            * 모든 요청에 인증이 필요함
+            * 기본 사용자 생성
+                * Username : user
+                * Password : 애플리케이션을 실행 할 때 마다 랜덤 값 생성 (콘솔 출력)
+                * spring.security.user.name
+                * spring.security.user.password
+            * 인증 관련 각종 이벤트 발생
+                * DefaultAuthenticationEventPublisher 빈 등록
+                * 다양한 인증 에러 핸들러 등록 가능
 * 스프링 부트 운영
