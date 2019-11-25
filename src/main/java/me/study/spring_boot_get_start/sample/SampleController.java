@@ -20,13 +20,20 @@ public class SampleController {
 
     @CrossOrigin(origins = "http://localhost:18080")
     @GetMapping("/hello")
-    public Hello hello() {
+    public Hello hello() throws InterruptedException {
+        Thread.sleep(5000);
         Hello hello = new Hello();
         hello.setName("dongchul");
         hello.setPrefix("Hey, ");
 
         hello.add(linkTo(SampleController.class).withSelfRel());
         return hello;
+    }
+
+    @GetMapping("/world")
+    public String world() throws InterruptedException {
+        Thread.sleep(3000);
+        return "world";
     }
 
     @GetMapping("/exception")
