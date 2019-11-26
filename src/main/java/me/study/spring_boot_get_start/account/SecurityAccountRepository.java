@@ -1,4 +1,9 @@
 package me.study.spring_boot_get_start.account;
 
-public class SecurityAccountRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface SecurityAccountRepository extends JpaRepository<SecurityAccount, Long> {
+    Optional<SecurityAccount> findByUserName(String username);
 }
