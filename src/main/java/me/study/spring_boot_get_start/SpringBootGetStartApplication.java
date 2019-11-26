@@ -15,11 +15,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.reactive.function.client.WebClientCustomizer;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -102,6 +104,16 @@ public class SpringBootGetStartApplication {
 
             //mongoTemplate.insert(mongoAccount);
             mongoAccountRepository.insert(mongoAccount);
+        };
+    }
+
+    @Bean
+    public WebClientCustomizer webClientCustomizer() {
+        return new WebClientCustomizer() {
+            @Override
+            public void customize(WebClient.Builder webClientBuilder) {
+                webClientBuilder.baseUrl("http://localhost:8080");
+            }
         };
     }
 
