@@ -525,5 +525,15 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * 글로벌 커스터마이징
                     * WebClientCustomizer
                     * 빈 재정의
+    * 스프링 부트 Actuator 
+        * 의존성
+            * spring-boot-starter-actuator
+        * 애플리케이션의 각종 정보를 확인 할 수 있는 Endpoints
+            * 다양한 Endpoints 제공
+            * JMX 또는 HTTP를 통해 접근 가능 함
+            * shutdown을 제외한 모든 Endpoint는 기본적으로 활성화 상태
+            * 활성화 옵션 조정
+                * management.endpoints.enabled-by-default=false
+                * management.endpoint.info.enabled=true
         
 * 스프링 부트 운영
