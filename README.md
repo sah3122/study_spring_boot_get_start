@@ -525,6 +525,7 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
                 * 글로벌 커스터마이징
                     * WebClientCustomizer
                     * 빈 재정의
+* 스프링 부트 운영
     * 스프링 부트 Actuator 
         * 의존성
             * spring-boot-starter-actuator
@@ -548,4 +549,29 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * 공개 옵션 조정
                 * management.endpoints.web.expose.include=*
                 * management.endpoints.web.expose.exclude=env,beans
-* 스프링 부트 운영
+        * 스프링 부트 어드민
+            * https://github.com/codecentric/spring-boot-admin 스프링 부트 Actuator UI 제공 
+            * 어드민 서버 설정
+            <br>
+            @EnableAdminServer
+            <br>
+            `<dependency>
+              <groupId>de.codecentric</groupId>
+              <artifactId>spring-boot-admin-starter-server</artifactId>
+              <version>2.0.1</version>
+            </dependency>`
+            * 클라이언트 설정
+            <br>
+            `<dependency>
+               <groupId>de.codecentric</groupId>
+               <artifactId>spring-boot-admin-starter-client</artifactId>
+               <version>2.0.1</version>
+             </dependency>`
+             spring.boot.admin.client.url=http://localhost:8080(어드민 서버 주소)
+             management.endpoints.web.exposure.include=*
+            * 운영중에도 로그 레벨 변경 가능
+            * 스프링 시큐리티를 반드시 설정 해야 한다.
+            
+            
+            
+
