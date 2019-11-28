@@ -535,5 +535,17 @@ Inflearn 스프링 부트 개념과 활용 강의 정리
             * 활성화 옵션 조정
                 * management.endpoints.enabled-by-default=false
                 * management.endpoint.info.enabled=true
-        
+        * JConsole 사용하기
+            * https://docs.oracle.com/javase/tutorial/jmx/mbeans/
+            * https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html
+        * VisualVM 사용하기
+            * https://visualvm.github.io/download.html
+            * java 10이상은 포함되어 있지 않다.
+            * jconsole보다 확인하기 편하다
+        * HTTP 사용하기
+            * /acturator
+            * health와 info를 제외한 대부분의 Endpoint가 기본적으로 비공개 상태
+            * 공개 옵션 조정
+                * management.endpoints.web.expose.include=*
+                * management.endpoints.web.expose.exclude=env,beans
 * 스프링 부트 운영
